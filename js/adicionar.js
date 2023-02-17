@@ -1,20 +1,16 @@
 const botao = document.querySelector(".botao");
 const total = document.querySelector("div");
 
-console.log(botao);
-
-if (botao) {
-  
-  function somaBotao() {
-    const somaDiv = total;
-    const adicionar = Number(somaDiv.innerHTML) + 1;
+function somaBotao() {
+  const somaDiv = total;
+  const adicionar = Number(somaDiv.innerText) + 1;
+  if (adicionar < 10) {
     somaDiv.innerText = adicionar;
-
-    if (somaDiv.innerHTML >= 10) {
-      somaDiv.innerHTML = "pare";
-    }
+  } else {
+    console.log("não é possível mais adicionar");
   }
-  somaBotao();
 }
 
-botao.addEventListener("click", somaBotao);
+if (botao) {
+  botao.addEventListener("click", somaBotao);
+}
